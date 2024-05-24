@@ -1,0 +1,23 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <h1>Adicionar novo curso</h1>
+
+<form action="{{url_for('novocurso')}}" method="post">
+    <div class="mb-3">
+        <label for="curso" class="form-label">Curso</label>
+        <input class="form-control" id="curso" name="curso" aria-describedby="emailHelp">
+        <div id="cursoHelp" class="form-text">Curso a ser adicionado.</div>
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="cargahoraria" class="form-label">Carga Horária</label>
+        <input class="form-control" id="cargahoraria" name="cargahoraria" aria-describedby="emailHelp">
+        <div id="cargahorariaHelp" class="form-text">Carga horária do curso.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}

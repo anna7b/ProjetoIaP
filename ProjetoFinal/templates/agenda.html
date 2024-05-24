@@ -1,0 +1,31 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <h1>Agenda de eventos e aulas</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id do registro</th>
+      <th scope="col">Data</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Tipo</th>
+        <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for evento in agenda %}
+    <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{evento[0]}}</td>
+        <td>{{evento[1]}}</td>
+        <td>{{evento[2]}}</td>
+        <td>
+            <form method="post" action="{{url_for('excluirevento', evento_id=loop.index-1)}}">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<a href="/novoevento"><h2>Criar novo evento na agenda</h2></a>
+{% endblock %}

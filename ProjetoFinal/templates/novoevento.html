@@ -1,0 +1,23 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+    <h1>Adicionar novo evento</h1>
+
+<form action="{{url_for('novoevento')}}" method="post">
+    <div class="mb-3">
+        <label for="data" class="form-label">Data</label>
+        <input class="form-control" id="data" name="data" aria-describedby="emailHelp">
+        <div id="dataHelp" class="form-text">Data do evento.</div>
+    </div>
+    <div class="mb-3">
+        <label for="descricao2" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao2" name="descricao2" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo: Aula ou Evento</label>
+        <input class="form-control" id="tipo" name="tipo" aria-describedby="emailHelp">
+        <div id="tipoHelp" class="form-text">Tipo: Aula ou Evento.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}
